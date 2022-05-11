@@ -1265,9 +1265,11 @@ Products Page
 }
 
 .company-btn:hover {
-  color: var(--clr-grey-3);
+  color: var(--clr-primary-5);
 }
-
+.company-btn:focus {
+  color: var(--clr-primary-5);
+}
 .price-filter {
   background: var(--clr-grey-5) !important;
   color: var(--clr-grey-5);
@@ -1446,6 +1448,10 @@ Single Product Page
   display: flex;
   align-items: center;
 }
+.checkout-remove p:hover {
+  cursor: pointer;
+  color: hsl(21, 57%, 50%);
+}
 .checkout-remove button {
   display: block;
 }
@@ -1455,4 +1461,11 @@ Single Product Page
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+.tab {
+  display: none;
+}
+.tab.active {
+  display: block;
 }

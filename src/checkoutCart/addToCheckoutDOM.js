@@ -1,5 +1,6 @@
 import { formatPrice, getElement } from '../utils.js';
 const cartTable = getElement('.checkout-container');
+
 export function addToCheckoutDOM({ id, name, price, image, amount }) {
   const productElement = document.createElement('div');
   productElement.classList.add('checkout-cart');

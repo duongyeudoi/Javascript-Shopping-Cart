@@ -93,8 +93,10 @@ function setupCartFunctionality() {
     const parentID = e.target.parentElement.dataset.id;
     // remove
     if (element.classList.contains('cart-item-remove-btn')) {
-      removeItem(id);
-      parent.parentElement.remove();
+      if (confirm('Bạn chắc chắn muốn xoá không?')) {
+        removeItem(id);
+        parent.parentElement.remove();
+      }
     }
     // increase
     if (parent.classList.contains('cart-item-increase-btn')) {
@@ -105,8 +107,10 @@ function setupCartFunctionality() {
     if (parent.classList.contains('cart-item-decrease-btn')) {
       const newAmount = decreaseAmount(parentID);
       if (newAmount === 0) {
-        removeItem(parentID);
-        parent.parentElement.remove();
+        if (confirm('Bạn chắc chắn muốn xoá không?')) {
+          removeItem(parentID);
+          parent.parentElement.parentElement.remove();
+        } else newAmount = increaseAmount(parentID);
       } else {
         parent.previousElementSibling.textContent = newAmount;
       }
